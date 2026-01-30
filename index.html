@@ -1,18 +1,102 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La-riff</title>
-    <link rel="stylesheet" href="./src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-black text-white">
-    <h1>LA-RIFF --coming soon</h1>
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"></nav>
-      <script type="module" src="/src/main.js"></script>
-  </body>
- 
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La-riff</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-black text-white antialiased selection:bg-white selection:text-black">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference">
+    <div class="text-xl font-serif tracking-widest uppercase font-bold">LA RIFF</div>
+    <div class="hidden md:flex space-x-8 text-sm tracking-widest uppercase font-light">
+      <a href="#products" class="hover:opacity-70 transition-opacity">Collection</a>
+      <a href="#" class="hover:opacity-70 transition-opacity">Cart (0)</a>
+    </div>
+    <button class="md:hidden text-white uppercase text-xs tracking-widest">Menu</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative w-full h-screen overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?q=80&w=2940&auto=format&fit=crop"
+        alt="LA RIFF Editorial" class="w-full h-full object-cover grayscale brightness-75" />
+      <div class="absolute inset-0 bg-black/20"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 w-full h-full flex flex-col justify-center items-center text-center px-4">
+      <p class="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in-up">Est. 2024</p>
+      <h1 class="text-6xl md:text-9xl font-serif font-bold tracking-tighter mb-4 animate-fade-in-up delay-100">
+        LA RIFF
+      </h1>
+      <div class="w-24 h-[1px] bg-white my-6 animate-fade-in-up delay-200"></div>
+      <p class="text-lg md:text-2xl font-light italic tracking-widest animate-fade-in-up delay-300">
+        Fashion, Redefined.
+      </p>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+      onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+      <svg class="w-6 h-6 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section id="products" class="min-h-screen w-full px-4 md:px-12 py-24 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-24 border-b border-white/20 pb-4">
+        <h2 class="text-4xl md:text-6xl font-serif">The Collection</h2>
+        <p class="text-xs tracking-widest uppercase text-gray-400 hidden md:block">Volume 01 -- Street Luxe</p>
+      </div>
+
+      <!-- Grid Container -->
+      <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 gap-y-32 gap-x-12">
+        <!-- Products will be injected here via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-24 px-6 border-t border-white/10 text-center md:text-left">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start">
+      <div class="mb-12 md:mb-0">
+        <h3 class="text-3xl font-serif mb-4">LA RIFF</h3>
+        <p class="text-sm text-gray-400 tracking-wider">Unapologetic. Raw. Refined.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-12 text-xs tracking-widest uppercase text-gray-400">
+        <div class="flex flex-col space-y-4">
+          <span class="text-white font-bold">Social</span>
+          <a href="#" class="hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="hover:text-white transition-colors">TikTok</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <span class="text-white font-bold">Legal</span>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-24 text-center text-[10px] text-gray-600 uppercase tracking-widest">
+      &copy; 2026 LA RIFF. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
